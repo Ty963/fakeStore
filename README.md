@@ -1,6 +1,18 @@
-# Fake Store
+
+# FakeStore App
 
 This is a web store template with a whole load of dummy data, I'm going to be fetching from the fakestore api and using this data in my project
+
+Built with React, TypeScript, and Tailwind CSS.
+
+## Development Journey
+1. **v1.0** - Initial React implementation with REST API integration 
+2. **v2.0** - Migrated to TypeScript for type safety
+3. **v3.0** - Redesigned UI with Tailwind CSS
+
+This iterative approach allowed me to...
+[explain what you learned at each stage]
+
 
 ## Features/Functionalities
 OK so first I'm going to explain the functionalities of this project The basic functionalities will be as follows 

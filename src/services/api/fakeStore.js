@@ -18,16 +18,16 @@ const fakeStoreApi = {
        }
     },
 
-    // async getSingleProduct(productId){
-    //     const url = FAKESTORE_API_URL + "/products/" + productId;
-    //     try {
-    //         const response = await axios.get(url);
-    //         return response.data;
-    //     } catch (error) {
-    //         const errorInfo = handleGetErrors(error, url);
-    //         console.error(errorInfo.message);
-    //     }
-    // };
+    async getSingleProduct(productId){
+        const url = FAKESTORE_API_URL + "/products/" + productId;
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            const errorInfo = handleGetErrors(error, url);
+            console.error(errorInfo.message);
+        }
+    },
 
 
     // Carts section
@@ -43,16 +43,16 @@ const fakeStoreApi = {
        }
     },
 
-    // async getSingleCart(cartId){
-    //     const url = FAKESTORE_API_URL + "/carts/" + cartId;
-    //     try {
-    //         const response = await axios.get(url);
-    //         return response.data;
-    //     } catch (error) {
-    //         const errorInfo = handleGetErrors(error, url);
-    //         console.error(errorInfo.message);
-    //     }
-    // }
+    async getSingleCart(cartId){
+        const url = FAKESTORE_API_URL + "/carts/" + cartId;
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            const errorInfo = handleGetErrors(error, url);
+            console.error(errorInfo.message);
+        }
+    },
 
     // Users section
     async getAllUsers(){
@@ -67,16 +67,33 @@ const fakeStoreApi = {
        }
     },
 
-    // async getSingleUser(userId){
-    //     const url = FAKESTORE_API_URL + "/carts/" + userId;
-    //     try {
-    //         const response = await axios.get(url);
-    //         return response.data;
-    //     } catch (error) {
-    //         const errorInfo = handleGetErrors(error, url);
-    //         console.error(errorInfo.message);
-    //     }
-    // };
+    async getSingleUser(userId){
+        const url = FAKESTORE_API_URL + "/carts/" + userId;
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            const errorInfo = handleGetErrors(error, url);
+            console.error(errorInfo.message);
+        }
+    },
+
+//     Authorization section
+    async authenticateUser(username, password) {
+        const url = FAKESTORE_API_URL + "/auth/login";
+        try {
+            let result = await axios.post(url,
+                {
+                    username: username,
+                    password: password
+                });
+            result = result.data;
+            console.log(result);
+            return result;
+        } catch (e) {
+            console.error(e.response ? e.response.data : e.message);
+        }
+    }
 
 }
 
