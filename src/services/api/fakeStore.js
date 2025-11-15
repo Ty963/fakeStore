@@ -105,6 +105,29 @@ const fakeStoreApi = {
        }
     },
 
+    // post request axios.post(url, data, config)
+    // TODO Check how to feed products array of objects, if necessary create a feeder function that creates the array of objects from passed parameters
+    async addNewCart(id, userId, products) {
+        const url = FAKESTORE_API_URL + "/carts";
+        try {
+            const response = await axios.post(url,
+                {
+                    "id": id,
+                    "userId": userId,
+                    "products": products // array of product objects
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            throw error
+        }
+    },
+
     async getSingleCart(cartId){
         const url = FAKESTORE_API_URL + "/carts/" + cartId;
         try {
@@ -113,6 +136,37 @@ const fakeStoreApi = {
         } catch (error) {
             const errorInfo = handleGetErrors(error, url);
             console.error(errorInfo.message);
+        }
+    },
+
+    async updateCart(cartId, userId, products) {
+        const url = FAKESTORE_API_URL + "/carts/" + cartId;
+        try {
+            const response = await axios.put(url, {
+                "id": cartId,
+                "userId": userId,
+                "products": products // array of product objects
+                }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            throw error
+        }
+    },
+
+    // TODO Check this deleteProduct function
+    async deleteCart(cartId) {
+        const url = FAKESTORE_API_URL + "/products/" + cartId;
+        try {
+            const response = await axios.delete(url);
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            throw error
         }
     },
 
@@ -129,14 +183,68 @@ const fakeStoreApi = {
        }
     },
 
+    // post request axios.post(url, data, config)
+    // TODO Check how to feed products array of objects, if necessary create a feeder function that creates the array of objects from passed parameters
+    async addNewUser(username, email, password ) {
+        const url = FAKESTORE_API_URL + "/users";
+        try {
+            const response = await axios.post(url,
+                {
+                    id: 0,
+                    username: username, 
+                    email: email, 
+                    password: password
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            throw error
+        }
+    },
+
     async getSingleUser(userId){
-        const url = FAKESTORE_API_URL + "/carts/" + userId;
+        const url = FAKESTORE_API_URL + "/users/" + userId;
         try {
             const response = await axios.get(url);
             return response.data;
         } catch (error) {
             const errorInfo = handleGetErrors(error, url);
             console.error(errorInfo.message);
+        }
+    },
+
+    async updateUser(userId, username, email) {
+        const url = FAKESTORE_API_URL + "/users/" + userId;
+        try {
+            const response = await axios.put(url, {
+                    "username": username,
+                    "email": email,
+                }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            throw error
+        }
+    },
+
+    // TODO Check this deleteProduct function
+    async deleteUser(userId) {
+        const url = FAKESTORE_API_URL + "/users/" + userId;
+        try {
+            const response = await axios.delete(url);
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            throw error
         }
     },
 
