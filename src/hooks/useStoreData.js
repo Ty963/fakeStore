@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { fakeStoreApi } from '../services/api/fakeStoreApi.js';
+import fakeStoreApi from '../services/api/fakeStoreApi.js';
 
 export function useStoreData() {
     const [userData, setUserData] = useState(null);
@@ -45,14 +45,14 @@ export function useStoreData() {
         }
     }, []);
 
-    const fetchSingleCart = useCallback(async () => {
+    const fetchSingleCart = useCallback(async (cartId) => {
         setLoading(true);
         setError(null);
         try {
-            const data = await fakeStoreApi.getSingleCart();
+            const data = await fakeStoreApi.getSingleCart(cartId);
             return data;
         } catch (err) {
-            setError(err.message || 'Error fetching carts');
+            setError(err.message || 'Error fetching cart');
         } finally {
             setLoading(false);
         }
@@ -71,14 +71,14 @@ export function useStoreData() {
         }
     }, []);
 
-    const fetchSingleUser = useCallback(async () => {
+    const fetchSingleUser = useCallback(async (userId) => {
         setLoading(true);
         setError(null);
         try {
-            const data = await fakeStoreApi.getSingleUser();
+            const data = await fakeStoreApi.getSingleUser(userId);
             return data;
         } catch (err) {
-            setError(err.message || 'Error fetching carts');
+            setError(err.message || 'Error fetching user');
         } finally {
             setLoading(false);
         }

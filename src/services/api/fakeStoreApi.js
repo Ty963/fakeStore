@@ -58,7 +58,7 @@ const fakeStoreApi = {
 // TODO Check this updateProduct function
 // If I can make a feeder instead of feeding everything as props then I'd be able to send only then changed fields and the rest would remain the same, API documentation says it's possible and ought to be done with that way, double check the veracity of this and otherwise nest inside an if where I check if the updated field is different from the original one and define a constant that can be fed as a prop while maintaining original values for unchanged fields
     async updateProduct(id, updatedTitle, updatedPrice, updatedDescription, updatedCategory, updatedImage) {
-        const url = FAKESTORE_API_URL + "/products/" + productId;
+        const url = FAKESTORE_API_URL + "/products/" + id;
         try {
             const response = await axios.put(url, {
                 "id": id,
@@ -160,7 +160,7 @@ const fakeStoreApi = {
 
     // TODO Check this deleteProduct function
     async deleteCart(cartId) {
-        const url = FAKESTORE_API_URL + "/products/" + cartId;
+        const url = FAKESTORE_API_URL + "/carts/" + cartId;
         try {
             const response = await axios.delete(url);
             console.log(response.data);

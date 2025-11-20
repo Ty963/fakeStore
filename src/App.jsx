@@ -1,33 +1,16 @@
 import './App.css'
-import fakeStoreApi from "./services/api/fakeStore.js";
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import LoginPage from './pages/Login/LoginPage.jsx';
+import TestPage from './pages/test/test.jsx';
 
 function App() {
-
-    async function handleFirstClick() {
-        await fakeStoreApi.getAllProducts();
-    }
-
-    async function handleSecondClick() {
-        await fakeStoreApi.getAllCarts();
-    }
-
-    async function handleThirdClick() {
-        await fakeStoreApi.getAllUsers();
-    }
-
   return (
-    <div className="wrapper">
-        <button onClick={handleFirstClick}>
-            Products
-        </button>
-        <button onClick={handleSecondClick}>
-            Carts
-        </button>
-        <button onClick={handleThirdClick}>
-            Users
-        </button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage/>}/>
+        <Route path="/test" element={<TestPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

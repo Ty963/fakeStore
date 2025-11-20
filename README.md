@@ -3,7 +3,16 @@
 
 This is a web store template with a whole load of dummy data, I'm going to be fetching from the fakestore api and using this data in my project
 
-Built with React, TypeScript, and Tailwind CSS.
+Built with React, TypeScript, and Tailwind CSS. 
+
+## TODO
+1. Implement routing
+2. Implement user context
+3. Implement local storage of user details
+4. Implement context for cart
+5. Implement auto cart fetch on refresh
+
+so functions that wait until the user does something to run, and functions that run once you hit a certain page are different and you have to get the timing right and be able tot ell the difference between the two
 
 ## Development Journey
 1. **v1.0** - Initial React implementation with REST API integration 
