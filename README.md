@@ -6,10 +6,10 @@ This is a web store template with a whole load of dummy data, I'm going to be fe
 Built with React, TypeScript, and Tailwind CSS. 
 
 ## TODO
-1. Implement routing
-2. Implement react-hook-form login page
-3. Implement user context
-4. Implement local storage of user details
+1. Implement user context
+2. Implement local storage of user details
+3. Implement a layout wrapper
+4. implement glassmorphic CSS styling
 5. Implement context for cart
 6. Implement auto cart fetch on refresh
 
