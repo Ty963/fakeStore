@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import fakeStoreApi from "../../services/api/fakeStoreApi";
+import { Link } from "react-router-dom";
 
 export default function RegisterPage() {
     const { register, handleSubmit } = useForm();
@@ -63,6 +64,10 @@ export default function RegisterPage() {
             <button type="submit" className="btn">
                 Register
             </button>
+
+            <Link to="/" className="link">
+                Login here
+            </Link>
 
         </form>
         </div>

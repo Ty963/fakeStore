@@ -12,6 +12,7 @@ Built with React, TypeScript, and Tailwind CSS.
 4. implement glassmorphic CSS styling
 5. Implement context for cart
 6. Implement auto cart fetch on refresh
+7. Implement auto login on refresh based on local storage
 
 so functions that wait until the user does something to run, and functions that run once you hit a certain page are different and you have to get the timing right and be able tot ell the difference between the two
 
