@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import fakeStoreApi from "../../services/api/fakeStoreApi";
 import { Link } from "react-router-dom";
+import styles from "./RegisterPage.module.css";
 
 export default function RegisterPage() {
     const { register, handleSubmit } = useForm();
@@ -12,7 +13,7 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className="wrapper">
+        <div className={styles.wrapper}>
         <form onSubmit={handleSubmit(handleFormSubmit)} className="form-container">
 
             <h2>

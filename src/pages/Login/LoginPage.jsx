@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import fakeStoreApi from "../../services/api/fakeStoreApi";
 import { Link } from "react-router-dom";
+import InputField from "../../components/InputField/InputField";
 
 export default function LoginPage() {
     // const { register, handleSubmit, formState: { errors } } = useForm();

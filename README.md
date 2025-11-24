@@ -6,13 +6,20 @@ This is a web store template with a whole load of dummy data, I'm going to be fe
 Built with React, TypeScript, and Tailwind CSS. 
 
 ## TODO
-1. Implement user context
-2. Implement local storage of user details
-3. Implement a layout wrapper
-4. implement glassmorphic CSS styling
+### React:
+1. Try to implement theme context from the get go
+2. Finish modular CSS for landing page/s
+3. Implement user context 
+4. Implement a layout wrapper
 5. Implement context for cart
 6. Implement auto cart fetch on refresh
 7. Implement auto login on refresh based on local storage
+
+
+### CSS:
+1. Check whether I want to replace label with placeholder
+2. Implement local storage of user details
+3. Implement glassmorphic CSS styling
 
 so functions that wait until the user does something to run, and functions that run once you hit a certain page are different and you have to get the timing right and be able tot ell the difference between the two
 
