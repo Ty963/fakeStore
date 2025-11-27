@@ -1,0 +1,19 @@
+:root {
+    --color__dark: #ffffff;
+    --wrapper-background-color__dark: #000000;
+    --section-background-color__dark: rgba(41, 41, 41, 0.26);
+  }
+
+
+
+/* [data-theme='blue'] {
+    --color: #ffffff;
+    --background-color: #2721c2;
+    --section-background-color: #3b33d140;
+  }
+
+  [data-theme='dark'] {
+    --color: #f7a84d;
+    --background-color: #1a1a1a;
+    --section-background-color: #56565642;
+  } */

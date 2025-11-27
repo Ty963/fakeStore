@@ -1,4 +1,4 @@
-function handlePostErrors(error, endpoint) {
+export default function handlePostErrors(error, endpoint) {
     // Handle timeout errors
     if (error.code === 'ECONNABORTED' || error.code === 'ETIMEDOUT') {
         console.error(`[${endpoint}] Request Timeout — Server took too long to respond`);

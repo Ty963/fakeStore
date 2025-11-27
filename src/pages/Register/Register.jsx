@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
 import fakeStoreApi from "../../services/api/fakeStoreApi";
 import { Link } from "react-router-dom";
-import styles from "./RegisterPage.module.css";
+import { useState } from "react";
 
 export default function RegisterPage() {
     const { register, handleSubmit } = useForm();
+    // Take the handle form submit and put it in a try catch block, subsequently we can take the error, if there is one, catch it and pass it to the error state, depending on which we will do conditional rendering of the error message element.
+    // const {error, setError} = useState(null);
 
     async function handleFormSubmit(data) {
         console.log(data);
@@ -13,8 +15,8 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className={styles.wrapper}>
-        <form onSubmit={handleSubmit(handleFormSubmit)} className="form-container">
+        <div className="wrapper">
+        <form onSubmit={handleSubmit(handleFormSubmit)}className="form-container">
 
             <h2>
                 Register

@@ -6,6 +6,9 @@ This is a web store template with a whole load of dummy data, I'm going to be fe
 Built with React, TypeScript, and Tailwind CSS. 
 
 ## TODO
+### ThemeContext
+BEM classnames
+
 ### React:
 1. Try to implement theme context from the get go
 2. Finish modular CSS for landing page/s

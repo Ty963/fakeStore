@@ -1,18 +1,137 @@
-#wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+
+/* ------------------------------ Index ------------------------------ */
+
+/* 1. Notes */
+
+/* 2. Styles */
+
+/* 3. Themes */
+
+    /* 3.1 Dark */
+    /* 3.2 Light */
+
+/* ------------------------------ Notes to self ------------------------------ */
+
+/* 1st th 1st */
+
+/* VIEWPORT!!!!!!!!!!! */
+
+/* TODOS on LoginPage.jsx */
+
+/* ------------------------------ Styles ------------------------------ */
+
+.wrapper {
+    background-color: black;
     width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 24px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
+/*.wrapper {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    height: 100vh;*/
+/*    width: 100vw;*/
+/*    background-color: var(--wrapper-background-color__dark);*/
+/*}*/
+
+/*.section-container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    padding: 24px;*/
+/*    border-radius: 8px;*/
+/*    min-width: 300px;*/
+/*    min-height: 500px;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background-color: var(--section-background-color__dark);*/
+/*}*/
+
+/*.input-group {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    margin: 10px;*/
+/*}*/
+
+/*.input-group input {*/
+/*    margin: 0 10px;*/
+/*}*/
+
+/*.submit-button {*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.error-message {*/
+/*    !*color: red;*!*/
+/*}*/
+
+/*.link {*/
+
+/*}*/
+
+/* ------------------------------ Themes ------------------------------ */
+
+/* ------------------------------ Dark ------------------------------ */
+
+/*.wrapper__dark {*/
+/*    background-color: var(--wrapper-background-color__dark);*/
+/*}*/
+
+/*.section-container__dark {*/
+/*    border: 1px solid var(--color);*/
+/*}*/
+
+/*.input-group__dark {*/
+/*    border: 1px solid var(--color);*/
+/*}*/
+
+/*.input-group__dark input {*/
+/*    margin: 0 10px;*/
+/*}*/
+
+/*.submit-button__dark {*/
+/*    background-color: var(--color);*/
+/*}*/
+
+/*.error-message__dark {*/
+/*    */
+/*}*/
+
+/*.link__dark {*/
+/*    */
+/*}*/
+
+/* ------------------------------ Blue ------------------------------ */
+
+/*.wrapper_blue {*/
+/*    background-color: var(--background-color);*/
+/*}*/
+
+/*.section-container__blue {*/
+/*    border: 1px solid var(--color);*/
+/*}*/
+
+/*.input-group__blue {*/
+/*    border: 1px solid var(--color);*/
+/*}*/
+
+/*.input-group__blue input {*/
+/*    margin: 0 10px;*/
+/*}*/
+
+/*.submit-button__blue {*/
+/*    background-color: var(--color);*/
+/*}*/
+
+/*.error-message__blue {*/
+/*    */
+/*}*/
+
+/*.link__blue {*/
+/*    */
+/*}*/
