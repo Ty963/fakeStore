@@ -3,27 +3,22 @@ import fakeStoreApi from "../../services/api/fakeStoreApi";
 import {Link} from "react-router-dom";
 import {useTheme} from "../../contexts/ThemeContext/ThemeContext.jsx";
 import styles from "./LoginPage.module.css";
+import {useState} from "react";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 
 export default function LoginPage() {
-    // TODO import the CSS and get to work with the style and format, use a placeholder color scheme for now
+    // TODO: Complete the error handling for the login form, find a way to present the error on the page using conditional rendering
     // TODO: Once this is done, implement the viewports
     // TODO: After all that is done, implement the different theme styles
-    // TODO: Complete the error handling for the login form, find a way to present the error on the page using conditional rendering
     // Noice
 
     // const { register, handleSubmit, formState: { errors } } = useForm();
     const {register, handleSubmit} = useForm();
-    const {theme} = useTheme();
+    const { theme } = useTheme();
+    const [error, setError] = useState(false);
 
     // Tested to see if useTheme hook was working correctly, it is.
     console.log(theme);
-
-    // Code Snippet that shows how to ...
-    // <button
-    //     className={`${styles.button} ${primary ? styles.primary : ""} ${large ? styles.large : ""}`}
-    // >
-    //     Click Me
-    // </button>
 
     async function handleFormSubmit(data) {
         // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
@@ -31,54 +26,55 @@ export default function LoginPage() {
         console.log(response);
     }
 
-    return (
-        // <div className={`wrapper wrapper__${theme}`}>
-        <div className={styles.wrapper}>
-            <form onSubmit={handleSubmit(handleFormSubmit)} className={`section-container section-container__${theme}`}>
+    return <div className={`${styles.wrapper} ${styles[`wrapper__${theme}`]}`}>
+        <form onSubmit={handleSubmit(handleFormSubmit)} className={`${styles[`section-container`]} ${styles[`section-container__${theme}`]}`}>
 
-                <h2>
-                    Login
-                </h2>
+            <h2 className={`${styles[`section-header`]} ${styles[`section-header__${theme}`]}`}>
+                Login
+            </h2>
 
-                <div className={`input-group input-group__${theme}`}>
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        {...register('username', {
-                            required: {
-                                value: true,
-                                message: 'This field is required',
-                            }
-                        })}
-                    />
-                </div>
+            <div className={`${styles[`input-group`]} ${styles[`input-group__${theme}`]}`}>
+                <input
+                    placeholder="Username"
+                    type="text"
+                    id={styles.username}
+                    name="username"
+                    className={`${styles[`input-field`]} ${styles[`input-field__${theme}`]}`}
+                    {...register('username', {
+                        required: {
+                            value: true,
+                            message: 'This field is required',
+                        }
+                    })}
+                />
+            </div>
 
-                <div className={`input-group input-group__${theme}`}>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        {...register('password', {
-                            required: {
-                                value: true,
-                                message: 'This field is required',
-                            }
-                        })}
-                    />
-                </div>
+            <div className={`${styles[`input-group`]} ${styles[`input-group__${theme}`]}`}>
+                <input
+                    placeholder="Password"
+                    type="password"
+                    id={styles.password}
+                    name="password"
+                    className={`${styles[`input-field`]} ${styles[`input-field__${theme}`]}`}
+                    {...register('password', {
+                        required: {
+                            value: true,
+                            message: 'This field is required',
+                        }
+                    })}
+                />
+            </div>
 
-                <button type="submit" className={`submit-button submit-button__${theme}`}>
-                    Login
-                </button>
+            <ErrorMessage error={error} />
 
-                <Link to="/register" className={`link link__${theme}`}>
-                    Register here
-                </Link>
+            <button id={styles[`submit-button`]} type="submit" className={`${styles[`submit-button`]} ${styles[`submit-button__${theme}`]}`}>
+                Login
+            </button>
 
-            </form>
-        </div>
-    )
+            <Link to="/register" className={`${styles.link} ${styles[`link__${theme}`]}`}>
+                Register here
+            </Link>
+
+        </form>
+    </div>
 }

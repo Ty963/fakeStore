@@ -1,8 +1,27 @@
+/* TODO: So when I figure out the color scheme I ought to look at viewport, crack that and then save presets
+    as variables adn apply those across the board in order to get it to scale properly*/
+
 :root {
+    --selection-background-color__dark: #3c3c3c;
     --color__dark: #ffffff;
     --wrapper-background-color__dark: #000000;
     --section-background-color__dark: rgba(41, 41, 41, 0.26);
-  }
+    --section-border-color__dark: #ffffff;
+    --input-background-color__dark: #1a1a1a;
+    --input-border-color__dark: #ffffff;
+    --input-color__dark: #ffffff;
+    --input-focus-background-color__dark: #3c3c3c;
+    --input-focus-color__dark: #ffffff;
+    --input-focus-border-color__dark: #afafaf;
+    --submit-button-background-color__dark: #1a1a1a;
+    --submit-button-color__dark: #ffffff;
+    --submit-button-border-color__dark: #ffffff;
+    --submit-button-focus-background-color__dark: #3c3c3c;
+    --submit-button-focus-color__dark: #ffffff;
+    --submit-button-focus-border-color__dark: #afafaf;
+    --link-color__dark: #ffffff;
+    --link-focus-color__dark: #d16517;
+}
 
 
 
