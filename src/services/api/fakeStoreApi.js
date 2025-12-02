@@ -1,5 +1,5 @@
 import axios from "axios";
-import handleGetErrors from "../../helper/handleGetErrors.js";
+import handleGetErrors from "../../helpers/handleGetErrors.js";
 
 const FAKESTORE_API_URL = import.meta.env.VITE_FAKESTORE_API;
 
@@ -261,7 +261,9 @@ const fakeStoreApi = {
             console.log(result);
             return result;
         } catch (e) {
-            console.error(e.response ? e.response.data : e.message);
+            // console.error(e.response ? e.response.data : e.message);
+            // console.error(e);
+            throw e;
         }
     }
 

@@ -4,14 +4,10 @@ import styles from "./ErrorMessage.module.css";
 export default function ErrorMessage(props) {
     const theme = useTheme()
 
-    if (props.error === true) {
-        return (
+    return (
         <p className={`${styles[`error-message`]} ${styles[`error-message__${theme}`]}`}>
-            {/*{props.message}*/}
-            Error message: The error message goes here
+            {props.message}
         </p>
-        )
-    } else {
-        return null;
-    }
+    )
+
 }
