@@ -8,8 +8,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 import handlePostErrors from "../../helpers/handlePostErrors.js";
 
 export default function LoginPage() {
-    // TODO: Complete the error handling for the login form, find a way to present the error on the page using conditional rendering
-    // TODO: Once this is done, implement the viewports
+    // TODO: Once this is done, implement the viewports, blueprint is to be found on the LoginPage.module.css file.
     // TODO: After all that is done, implement the different theme styles
     // Noice
 
@@ -27,7 +26,7 @@ export default function LoginPage() {
     });
 
     // Tested to see if useTheme hook was working correctly, it is.
-    console.log(theme);
+    // console.log(theme);
 
     async function handleFormSubmit(data) {
         // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
@@ -49,7 +48,8 @@ export default function LoginPage() {
         }
     }
 
-    return <div className={`${styles.wrapper} ${styles[`wrapper__${theme}`]}`}>
+    return (
+        <div className={`${styles.wrapper} ${styles[`wrapper__${theme}`]}`}>
         <form onSubmit={handleSubmit(handleFormSubmit)} className={`${styles[`section-container`]} ${styles[`section-container__${theme}`]}`}>
 
             <h2 className={`${styles[`section-header`]} ${styles[`section-header__${theme}`]}`}>
@@ -90,6 +90,7 @@ export default function LoginPage() {
 
             <Activity mode={(error.isError) ? "visible" : "hidden"}>
                 <ErrorMessage message={(error.isError) ? error.message : null}/>
+                {/*The one underneath here does not work, it's just a placeholder for the error message, it's not being rendered. I'm not quite sure why, that is something that is worth getting into later*/}
                 {/*<ErrorMessage message={error.isError}/>*/}
             </Activity>
 
@@ -103,4 +104,5 @@ export default function LoginPage() {
 
         </form>
     </div>
+    )
 }

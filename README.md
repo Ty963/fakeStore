@@ -10,21 +10,21 @@ Built with React, TypeScript, and Tailwind CSS.
 BEM classnames
 
 ### React:
-1. Try to implement theme context from the get go
-2. Finish modular CSS for landing page/s
-3. Implement user context 
+1. Finish modular CSS for Registration page/s.
+2. Put theme in local storage and get it from there on refresh
+3. Implement user context
 4. Implement a layout wrapper
-5. Implement context for cart
+5. Implement context for carts
 6. Implement auto cart fetch on refresh
 7. Implement auto login on refresh based on local storage
+ 
 
 
 ### CSS:
-1. Check whether I want to replace label with placeholder
-2. Implement local storage of user details
-3. Implement glassmorphic CSS styling
+1. Implement local storage of user details
+2. Implement glassmorphic CSS styling for the other style that is not black
 
-so functions that wait until the user does something to run, and functions that run once you hit a certain page are different and you have to get the timing right and be able tot ell the difference between the two
+so functions that wait until the user does something to run, and functions that run once you hit a certain page are different and you have to get the timing right and be able to tell the difference between the two
 
 ## Development Journey
 1. **v1.0** - Initial React implementation with REST API integration 

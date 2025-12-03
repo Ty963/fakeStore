@@ -17,6 +17,33 @@
 /* 1st th 1st */
 
 /* VIEWPORT!!!!!!!!!!! */
+/* Make sure the site is scrollable so that mobile devices can scroll up and press submit when the keyboard blocks the submit button*/
+
+/*@media screen and (min-width: 576px) {*/
+/*    p {*/
+/*        font-size: 14px;*/
+/*    }*/
+/*}*/
+/*@media screen and (min-width: 768px) {*/
+/*    p {*/
+/*        font-size: 14px;*/
+/*    }*/
+/*}*/
+/*@media screen and (min-width: 992px) {*/
+/*    p {*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
+/*@media screen and (min-width: 1200px) {*/
+/*    p {*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
+/*@media screen and (min-width: 1600px) {*/
+/*    p {*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
 
 /* TODOS on LoginPage.jsx */
 
