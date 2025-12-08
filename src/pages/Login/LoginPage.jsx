@@ -29,8 +29,8 @@ export default function LoginPage() {
     // console.log(theme);
 
     async function handleFormSubmit(data) {
-        // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
         try {
+            // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
             const response = await fakeStoreApi.authenticateUser(data.username, data.password);
         } catch (e) {
             const FAKESTORE_API_URL = import.meta.env.VITE_FAKESTORE_API;

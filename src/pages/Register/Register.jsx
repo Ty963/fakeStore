@@ -5,19 +5,43 @@ import {Activity, useState} from "react";
 import {useTheme} from "../../contexts/ThemeContext/ThemeContext.jsx";
 import styles from "../Register/Register.module.css";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
+import handlePostErrors from "../../helpers/handlePostErrors.js";
 
 export default function RegisterPage() {
     const {register, handleSubmit} = useForm();
     // TODO: make sure error handling is complete.
-    // const {error, setError} = useState(null);
+    const [error, setError] = useState({
+        isError: false,
+        handled: false,
+        status: false,
+        message: false,
+        shouldRetry: false,
+        originalError: false,
+        validationErrors: false
+    });
     const {theme} = useTheme();
 
 
     async function handleFormSubmit(data) {
-        console.log(data);
-        // TODO: Take the handle form submit and put it in a try catch block, subsequently we can take the error, if there is one, catch it and pass it to the error state, depending on which we will do conditional rendering of the error message element. Follow the same procedure as in the login page.
-        // const response = await fakeStoreApi.registerUser(data.username, data.email, data.password);
-        // console.log(response);
+        try {
+            // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
+            const response = await fakeStoreApi.addNewUser(data.username, data.email, data.password);
+        } catch (e) {
+            const FAKESTORE_API_URL = import.meta.env.VITE_FAKESTORE_API;
+            const endpoint = FAKESTORE_API_URL + "/users";
+            const errorInfo = handlePostErrors(e, endpoint)
+            setError({
+                isError: true,
+                handled: errorInfo.handled,
+                status: errorInfo.status,
+                message: errorInfo.message,
+                shouldRetry: errorInfo.shouldRetry,
+                originalError: errorInfo.originalError,
+                validationErrors: errorInfo.validationErrors
+            });
+        }
+
+
     }
 
     return (
@@ -77,9 +101,9 @@ export default function RegisterPage() {
                     />
                 </div>
 
-                {/*<Activity mode={(error.isError) ? "visible" : "hidden"}>*/}
-                {/*    <ErrorMessage message={(error.isError) ? error.message : null}/>*/}
-                {/*</Activity>*/}
+                <Activity mode={(error.isError) ? "visible" : "hidden"}>
+                    <ErrorMessage message={(error.isError) ? error.message : null}/>
+                </Activity>
 
                 <button id={styles[`submit-button`]} type="submit" className={`${styles[`submit-button`]} ${styles[`submit-button__${theme}`]}`}>
                     Register

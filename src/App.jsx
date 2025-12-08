@@ -6,6 +6,11 @@ import LoginPage from './pages/Login/LoginPage.jsx';
 import TestPage from './pages/test/test.jsx';
 import RegisterPage from './pages/Register/Register.jsx';
 
+// TODO: Implement a catch all route for 404 errors
+// TODO: Implement private routes for the pages that require authentication
+// TODO: Implement a Home page in order to test layouts with the Layout component and develop the navigation
+
+
 function App() {
   return (
     <BrowserRouter>

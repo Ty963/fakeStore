@@ -6,19 +6,23 @@ This is a web store template with a whole load of dummy data, I'm going to be fe
 Built with React, TypeScript, and Tailwind CSS. 
 
 ## TODO
-### ThemeContext
-BEM classnames
+    Implement a glassmorphism theme
+    Implement user context
+    Manage login and register processes and finish up the respective pages
+    Implement a layout wrapper
+    Sketch wireframes in order to get a better idea of the UI once all lgoin/register actions have been hashed out
+    Implement context for carts
+    Implement auto cart fetch on refresh
+    Implement auto login on refresh based on local storage
+    Put theme in local storage and get it from there on refresh
 
 ### React:
-1. Finish modular CSS for Registration page/s.
-2. Put theme in local storage and get it from there on refresh
-3. Implement user context
-4. Implement a layout wrapper
-5. Implement context for carts
-6. Implement auto cart fetch on refresh
-7. Implement auto login on refresh based on local storage
- 
-
+1. Implement user context
+2. Implement a layout wrapper
+3. Implement context for carts
+4. Implement auto cart fetch on refresh
+5. Implement auto login on refresh based on local storage
+6. Put theme in local storage and get it from there on refresh
 
 ### CSS:
 1. Implement local storage of user details
