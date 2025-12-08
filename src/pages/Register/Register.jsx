@@ -8,6 +8,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 
 export default function RegisterPage() {
     const {register, handleSubmit} = useForm();
+    // TODO: make sure error handling is complete.
     // const {error, setError} = useState(null);
     const {theme} = useTheme();
 

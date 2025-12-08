@@ -8,7 +8,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 import handlePostErrors from "../../helpers/handlePostErrors.js";
 
 export default function LoginPage() {
-    // TODO: Once this is done, implement the viewports, blueprint is to be found on the LoginPage.module.css file.
+    // TODO: Once this is done, implement the viewports, blueprint is to be found on the LoginPage.module.css file. use rem and em units for the sizes.
     // TODO: After all that is done, implement the different theme styles
     // Noice
 

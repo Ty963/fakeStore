@@ -1,54 +1,12 @@
-
 /* ------------------------------ Index ------------------------------ */
 
 /* 1. Notes */
-
 /* 2. Imports */
-
-/* 2. Styles */
-
-/* 3. Themes */
-
-    /* 3.1 Dark */
-    /* 3.2 Light */
-
-/* ------------------------------ Notes to self ------------------------------ */
-
-/* 1st th 1st */
-
-/* VIEWPORT!!!!!!!!!!! */
-/* Make sure the site is scrollable so that mobile devices can scroll up and press submit when the keyboard blocks the submit button*/
-
-/*@media screen and (min-width: 576px) {*/
-/*    p {*/
-/*        font-size: 14px;*/
-/*    }*/
-/*}*/
-/*@media screen and (min-width: 768px) {*/
-/*    p {*/
-/*        font-size: 14px;*/
-/*    }*/
-/*}*/
-/*@media screen and (min-width: 992px) {*/
-/*    p {*/
-/*        font-size: 16px;*/
-/*    }*/
-/*}*/
-/*@media screen and (min-width: 1200px) {*/
-/*    p {*/
-/*        font-size: 16px;*/
-/*    }*/
-/*}*/
-/*@media screen and (min-width: 1600px) {*/
-/*    p {*/
-/*        font-size: 16px;*/
-/*    }*/
-/*}*/
-
-/* TODOS on LoginPage.jsx */
-
-/* evaluate whether box shadow is something I want to use, it'll be either
-lifted or flat but both won't work*/
+/* 3. Styles */
+/* 4. Responsive Media Queries */
+/* 5. Themes */
+/* 5.1 Dark */
+/* 5.2 Light */
 
 /* ------------------------------ Imports ------------------------------ */
 
@@ -56,34 +14,36 @@ lifted or flat but both won't work*/
 
 /* ------------------------------ Styles ------------------------------ */
 
+/* Mobile-first: Extra tall to allow scrolling past keyboard */
 .wrapper {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align to top, no space above */
+    width: 100%;
+    /* INCREASED HEIGHT for mobile - allows scrolling when keyboard appears */
+    min-height: 150vh; /* 150% of viewport height gives plenty of scroll room */
+    padding: 2rem 1rem 4rem 1rem; /* Top: 2rem, Sides: 1rem, Bottom: 4rem (extra space) */
 }
 
 .section-container {
     display: flex;
     flex-direction: column;
-    /*z-index: 1;*/
-    padding: 24px;
-    border-radius: 12px;
-    min-width: 300px;
-    min-height: 500px;
-    max-width: 300px;
-    max-height: 500px;
+    padding: 1.5rem; /* 24px */
+    border-radius: 0.75rem; /* 12px */
+    width: 100%;
+    max-width: 18.75rem; /* 300px */
+    min-height: 31.25rem; /* 500px */
     justify-content: flex-start;
     align-items: center;
     background-color: var(--section-background-color__dark);
-    overflow: hidden;
+    /* Remove fixed max-height to allow content to expand if needed */
 }
 
 .section-header {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 0.9375rem; /* 15px */
+    margin-bottom: 0.9375rem; /* 15px */
+    font-size: 1.75rem; /* 28px */
 }
 
 .input-group {
@@ -91,8 +51,9 @@ lifted or flat but both won't work*/
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 0.625rem; /* 10px */
+    margin: 0.3125rem 0; /* 5px */
+    width: 100%;
 }
 
 #username {
@@ -108,32 +69,142 @@ lifted or flat but both won't work*/
 }
 
 .input-field {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
     box-shadow: none;
     outline: none;
-    border-radius: 8px;
+    border-radius: 0.5rem; /* 8px */
+    font-size: 1rem;
 }
 
 .submit-button {
-    margin-top: 15px;
-    border-radius: 8px;
+    margin-top: 0.9375rem; /* 15px */
+    margin-bottom: 0.9375rem; /* 15px - extra margin for mobile */
+    border-radius: 0.5rem; /* 8px */
     cursor: pointer;
-    padding: 10px 50px;
+    padding: 0.625rem 3.125rem; /* 10px 50px */
     box-shadow: none;
     outline: none;
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
 
 .error-message {
-    padding: 5px;
-    margin: 10px;
-    font-size: 1.5rem;
+    padding: 0.3125rem; /* 5px */
+    margin: 0.625rem; /* 10px */
+    font-size: 0.875rem; /* 14px */
 }
 
 .link {
-    margin-top: 15px;
+    margin-top: 0.9375rem; /* 15px */
+    margin-bottom: 1.5rem; /* Extra bottom margin for mobile scrolling */
     color: var(--link-color__dark);
-    padding: 5px;
-    border-radius: 8px;
+    padding: 0.3125rem; /* 5px */
+    border-radius: 0.5rem; /* 8px */
+    text-decoration: none;
+    font-size: 0.875rem; /* 14px */
+}
+
+/* ------------------------------ Responsive Media Queries ------------------------------ */
+
+/* Small mobile devices - even more height */
+@media screen and (max-width: 374px) {
+    .wrapper {
+        min-height: 180vh; /* More room for smaller screens */
+        padding: 2rem 0.75rem 5rem 0.75rem; /* Extra bottom space only */
+    }
+
+    .section-container {
+        padding: 1rem;
+        max-width: 16.875rem; /* 270px */
+    }
+
+    .section-header {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile landscape and small tablets - still scrollable */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .wrapper {
+        min-height: 140vh; /* Still plenty of room */
+        padding: 2rem 1.5rem 4rem 1.5rem; /* Extra bottom space only */
+    }
+
+    .section-container {
+        max-width: 20rem; /* 320px */
+    }
+}
+
+/* Tablets and above: Fixed viewport, centered content, no extra height needed */
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh; /* Back to normal viewport height */
+        justify-content: center;
+        padding: 0; /* Remove extra padding */
+    }
+
+    .section-container {
+        max-width: 21.875rem; /* 350px */
+        padding: 2rem;
+    }
+
+    .section-header {
+        font-size: 2rem;
+    }
+
+    .input-field {
+        font-size: 1.0625rem; /* 17px */
+    }
+
+    .submit-button {
+        font-size: 1.0625rem;
+        padding: 0.75rem 3.5rem;
+        margin-bottom: 0.9375rem; /* Reset margin */
+    }
+
+    .link {
+        margin-bottom: 0.9375rem; /* Reset margin */
+    }
+}
+
+/* Larger tablets and small desktops */
+@media screen and (min-width: 992px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .section-container {
+        max-width: 23.125rem; /* 370px */
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1200px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .section-container {
+        max-width: 25rem; /* 400px */
+        padding: 2.5rem;
+    }
+}
+
+/* Large desktops */
+@media screen and (min-width: 1600px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .section-container {
+        max-width: 28.125rem; /* 450px */
+    }
 }
 
 /* ------------------------------ Themes ------------------------------ */
@@ -142,27 +213,11 @@ lifted or flat but both won't work*/
 
 .wrapper__dark {
     background-color: var(--wrapper-background-color__dark);
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*z-index: -1;*/
-    /*background: url("src/assets/Adobe Express - HDCyberfunk.gif") no-repeat center center;*/
-    /*background-size: cover;*/
 }
 
 .section-container__dark {
     border: 1px solid var(--section-border-color__dark);
 }
-
-/*.section-header__dark {*/
-
-/*}*/
-
-/*.input-group__dark {*/
-/*    border: 1px solid var(--color);*/
-/*}*/
 
 .input-field__dark {
     background-color: var(--input-background-color__dark);
@@ -170,7 +225,7 @@ lifted or flat but both won't work*/
     border: 1px solid var(--input-border-color__dark);
 }
 
-.input-field__dark:hover , .input-field__dark:focus, .input-field__dark:autofill {
+.input-field__dark:hover, .input-field__dark:focus, .input-field__dark:autofill {
     background-color: var(--input-focus-background-color__dark);
     color: var(--input-focus-color__dark);
     border: 1px solid var(--input-focus-border-color__dark);
@@ -188,44 +243,10 @@ lifted or flat but both won't work*/
     border: 1px solid var(--submit-button-focus-border-color__dark);
 }
 
-/*.error-message__dark {*/
-/*    */
-/*}*/
-
-/*.link__dark {*/
-/*    */
-/*}*/
-
 .link__dark:hover {
     color: var(--link-focus-color__dark);
 }
 
-/* ------------------------------ Blue ------------------------------ */
+/* ------------------------------ Light Theme (placeholder) ------------------------------ */
 
-/*.wrapper__blue {*/
-/*    background-color: var(--background-color);*/
-/*}*/
-
-/*.section-container__blue {*/
-/*    border: 1px solid var(--color);*/
-/*}*/
-
-/*.input-group__blue {*/
-/*    border: 1px solid var(--color);*/
-/*}*/
-
-/*.input-group__blue input {*/
-/*    margin: 0 10px;*/
-/*}*/
-
-/*.submit-button__blue {*/
-/*    background-color: var(--color);*/
-/*}*/
-
-/*.error-message__blue {*/
-/*    */
-/*}*/
-
-/*.link__blue {*/
-/*    */
-/*}*/
+/* Add light theme styles here when needed */
