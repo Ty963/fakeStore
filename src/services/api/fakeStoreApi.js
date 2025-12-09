@@ -6,6 +6,16 @@ const FAKESTORE_API_URL = import.meta.env.VITE_FAKESTORE_API;
 const fakeStoreApi = {
 
     // Products section
+    // Products Object = {category: category,
+        // description: description,
+        // id: 1,
+        // image: image,
+        // price: price,
+        // rating: {
+            // count: count,
+            // rate: rate},
+        // title: title }
+
     async getAllProducts(){
        const url = FAKESTORE_API_URL + "/products";
        try {
@@ -93,6 +103,11 @@ const fakeStoreApi = {
 
 
     // Carts section
+    // Cart Object = {date: date,
+        // id: id,
+        // products: [product1, product2, ...],
+        // userId: userId}
+
     async getAllCarts(){
        const url = FAKESTORE_API_URL + "/carts";
        try {
@@ -171,6 +186,21 @@ const fakeStoreApi = {
     },
 
     // Users section
+    // User Object = {adress: {city: city,
+        // geolocation: {lat: lat, lng: lng},
+        // number: 7267,
+        // street: street,
+        // zipcode: zipcode}
+    // },
+    // email: email,
+    // id: id,
+    // name: {
+    //  firstname: firstname,
+    //  lastname: lastname },
+    // password: password,
+    // phone: phone,
+    // username: username
+
     async getAllUsers(){
        const url = FAKESTORE_API_URL + "/users";
        try {

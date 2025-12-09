@@ -1,3 +1,5 @@
+// TODO: Remove the URL from the props of the error object and avoid unnecessary nesting
+
 export default function handleGetErrors(error, endpoint) {
     // Handle timeout errors
     if (error.code === 'ECONNABORTED' || error.code === 'ETIMEDOUT') {

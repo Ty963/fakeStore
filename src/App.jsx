@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import LoginPage from './pages/Login/LoginPage.jsx';
 import TestPage from './pages/test/test.jsx';
 import RegisterPage from './pages/Register/Register.jsx';
+import NotFoundPage from "./pages/NotFound/NotFoundPage.jsx";
 
 // TODO: Implement a catch all route for 404 errors
 // TODO: Implement private routes for the pages that require authentication
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<LoginPage/>}/>
         <Route path="/register" element={<RegisterPage/>}/>
         <Route path="/test" element={<TestPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   )
