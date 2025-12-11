@@ -6,6 +6,8 @@ This is a web store template with a whole load of dummy data, I'm going to be fe
 Built with React, TypeScript, and Tailwind CSS. 
 
 ## TODO
+    Finish usecase tables in the docs folder
+    Finish wireframes in the docs folder
     Implement a glassmorphism theme
     Implement user context
     Manage login and register processes and finish up the respective pages
