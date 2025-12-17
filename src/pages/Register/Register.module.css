@@ -224,6 +224,10 @@
     border: 1px solid var(--section-border-color__dark);
 }
 
+.section-header__dark {
+    color: var(--color__dark);
+}
+
 .input-field__dark {
     background-color: var(--input-background-color__dark);
     color: var(--input-color__dark);
