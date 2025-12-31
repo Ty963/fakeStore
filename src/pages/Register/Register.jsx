@@ -19,13 +19,18 @@ export default function RegisterPage() {
         originalError: false,
         validationErrors: false
     });
+
+    const [show, setShow] = useState(false);
     const {theme} = useTheme();
 
+    const handleClose = () => setShow(false);  
+    const handleShow = () => setShow(true)
 
     async function handleFormSubmit(data) {
         try {
             // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
             const response = await fakeStoreApi.addNewUser(data.username, data.email, data.password);
+            handleShow();
         } catch (e) {
             const FAKESTORE_API_URL = import.meta.env.VITE_FAKESTORE_API;
             const endpoint = FAKESTORE_API_URL + "/users";
@@ -40,12 +45,25 @@ export default function RegisterPage() {
                 validationErrors: errorInfo.validationErrors
             });
         }
-
-
     }
 
     return (
         <div className={`${styles.wrapper} ${styles[`wrapper__${theme}`]}`}>
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>
+                                Modal heading
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            Success!!! You are registered
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
             <form onSubmit={handleSubmit(handleFormSubmit)}
                   className={`${styles[`section-container`]} ${styles[`section-container__${theme}`]}`}>
 
