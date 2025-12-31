@@ -3,20 +3,10 @@
 
 This is a web store template with a whole load of dummy data, I'm going to be fetching from the fakestore api and using this data in my project
 
-Built with React, TypeScript, and Tailwind CSS. 
+Built with React, TypeScript, Bootstrap and Tailwind CSS. 
 
 ## TODO
-    Finish usecase tables in the docs folder
-    Finish wireframes in the docs folder
-    Implement a glassmorphism theme
-    Implement user context
-    Manage login and register processes and finish up the respective pages
-    Implement a layout wrapper
-    Sketch wireframes in order to get a better idea of the UI once all lgoin/register actions have been hashed out
-    Implement context for carts
-    Implement auto cart fetch on refresh
-    Implement auto login on refresh based on local storage
-    Put theme in local storage and get it from there on refresh
+    To be found in the TODO file in the docs folder
 
 ### React:
 1. Implement user context
@@ -33,7 +23,7 @@ Built with React, TypeScript, and Tailwind CSS.
 so functions that wait until the user does something to run, and functions that run once you hit a certain page are different and you have to get the timing right and be able to tell the difference between the two
 
 ## Development Journey
-1. **v1.0** - Initial React implementation with REST API integration 
+1. **v1.0** - Initial React implementation with REST API integration and React Bootstrap
 2. **v2.0** - Migrated to TypeScript for type safety
 3. **v3.0** - Redesigned UI with Tailwind CSS
 
