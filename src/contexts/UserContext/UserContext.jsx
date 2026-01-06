@@ -8,7 +8,7 @@ export function UserProvider({ children }) {
     // TODO: add all of the relevant values to the values constant and pass that to the value property of the UserContext.Provider element
 
     const [authorised, setAuthorised] = useState(false);
-    const [userData, setUserData] = useState(null);
+    const [userId, setUserId] = useState(null);
 
     const value = "placeholder";
 

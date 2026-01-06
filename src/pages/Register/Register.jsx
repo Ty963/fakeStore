@@ -6,6 +6,9 @@ import {useTheme} from "../../contexts/ThemeContext/ThemeContext.jsx";
 import styles from "../Register/Register.module.css";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 import handlePostErrors from "../../helpers/handlePostErrors.js";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import {saveToken} from "../../services/storage/localStorage.js";
 
 export default function RegisterPage() {
     const {register, handleSubmit} = useForm();
@@ -20,15 +23,18 @@ export default function RegisterPage() {
         validationErrors: false
     });
 
-    const [show, setShow] = useState(false);
     const {theme} = useTheme();
 
-    const handleClose = () => setShow(false);  
-    const handleShow = () => setShow(true)
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     async function handleFormSubmit(data) {
         try {
             // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
+            // TODO: implement timer before redirecting to home page
+            // TODO: implement automatic login after successful registration
             const response = await fakeStoreApi.addNewUser(data.username, data.email, data.password);
             handleShow();
         } catch (e) {
@@ -49,21 +55,21 @@ export default function RegisterPage() {
 
     return (
         <div className={`${styles.wrapper} ${styles[`wrapper__${theme}`]}`}>
-                    <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>
-                                Modal heading
-                            </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            Success!!! You are registered
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={handleClose}>
-                                Close
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
+            <Modal centered show={show} onHide={handleClose} className="modal" data-bs-theme="dark">
+                <Modal.Header closeButton>
+                    <Modal.Title>
+                        Registered!!!
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="modal-content">
+                    Success!!! You are registered
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <form onSubmit={handleSubmit(handleFormSubmit)}
                   className={`${styles[`section-container`]} ${styles[`section-container__${theme}`]}`}>
 
@@ -123,7 +129,8 @@ export default function RegisterPage() {
                     <ErrorMessage message={(error.isError) ? error.message : null}/>
                 </Activity>
 
-                <button id={styles[`submit-button`]} type="submit" className={`${styles[`submit-button`]} ${styles[`submit-button__${theme}`]}`}>
+                <button id={styles[`submit-button`]} type="submit"
+                        className={`${styles[`submit-button`]} ${styles[`submit-button__${theme}`]}`}>
                     Register
                 </button>
 

@@ -1,7 +1,7 @@
 import { useStoreData } from "../../hooks/useStoreData";
 
 export default function TestPage() {
-    const { fetchAllProducts, fetchAllUsers, fetchAllCarts } = useStoreData();
+    const { fetchAllProducts, fetchAllUsers, fetchAllCarts, fetchSingleUser } = useStoreData();
     
     async function handleClick() {
         const products = await fetchAllProducts();
@@ -10,6 +10,8 @@ export default function TestPage() {
         console.log(users);
         const carts = await fetchAllCarts();
         console.log(carts);
+        const user = await fetchSingleUser(1);
+        console.log(user);
     }
 
     return (

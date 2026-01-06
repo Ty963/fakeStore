@@ -6,6 +6,7 @@ import styles from "./LoginPage.module.css";
 import {Activity, useState} from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage.jsx";
 import handlePostErrors from "../../helpers/handlePostErrors.js";
+import {saveToken} from "../../services/storage/localStorage.js";
 
 export default function LoginPage() {
     // TODO: Once this is done, implement the viewports, blueprint is to be found on the LoginPage.module.css file. use rem and em units for the sizes.
@@ -32,6 +33,7 @@ export default function LoginPage() {
         try {
             // TODO: implement login logic, implement more logic and navigation after successful contexts implementation.
             const response = await fakeStoreApi.authenticateUser(data.username, data.password);
+            saveToken(response);
         } catch (e) {
             const FAKESTORE_API_URL = import.meta.env.VITE_FAKESTORE_API;
             const endpoint = FAKESTORE_API_URL + "/auth/login"
