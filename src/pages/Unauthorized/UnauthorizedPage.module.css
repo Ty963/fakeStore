@@ -1,0 +1,60 @@
+/* UnauthorizedPage.module.css */
+@import '/src/styles/variables.css';
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.message {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+/* Dark theme */
+.wrapper__dark {
+    background-color: var(--wrapper-background-color__dark);
+}
+
+.title__dark {
+    color: var(--color__dark);
+}
+
+.message__dark {
+    color: var(--color__dark);
+}
+
+.button__dark {
+    background-color: var(--submit-button-background-color__dark);
+    color: var(--submit-button-color__dark);
+    border: 1px solid var(--submit-button-border-color__dark);
+}
+
+.button__dark:hover {
+    background-color: var(--submit-button-focus-background-color__dark);
+    color: var(--submit-button-focus-color__dark);
+    border-color: var(--submit-button-focus-border-color__dark);
+}
