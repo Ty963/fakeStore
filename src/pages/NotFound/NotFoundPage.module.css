@@ -1,4 +1,5 @@
-
+/* NotFoundPage.module.css */
+@import '/src/styles/variables.css';
 
 .wrapper {
     width: 100vw;
@@ -10,10 +11,56 @@
 }
 
 .header {
-    margin-bottom: 25px ;
+    margin-bottom: 25px;
 }
 
+.content {
+    margin-bottom: 25px;
+}
+
+/* ========== DARK THEME ========== */
+
 .wrapper__dark {
-    background-color: var(--wrapper-background-color__dark);
-    color: var(--color__dark);
+    background-color: var(--wrapper-background-color);
+    color: var(--color);
+}
+
+/* ========== GLASSMORPHIC THEME ========== */
+
+.wrapper__glassmorphic {
+    background-image: url('/src/assets/Adobe Express - HDCyberfunk.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    position: relative;
+}
+
+/* Dark overlay for readability */
+.wrapper__glassmorphic::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.wrapper__glassmorphic > * {
+    position: relative;
+    z-index: 1;
+}
+
+.wrapper__glassmorphic .header {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+.wrapper__glassmorphic .content {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }

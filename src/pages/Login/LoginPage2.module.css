@@ -1,0 +1,256 @@
+/* ------------------------------ Index ------------------------------ */
+
+/* 1. Notes */
+/* 2. Imports */
+/* 3. Styles */
+/* 4. Responsive Media Queries */
+/* 5. Themes */
+/* 5.1 Dark */
+/* 5.2 Light */
+
+/* ------------------------------ Imports ------------------------------ */
+
+@import '/src/styles/variables.css';
+
+/* ------------------------------ Styles ------------------------------ */
+
+/* Mobile-first: Extra tall to allow scrolling past keyboard */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align to top, no space above */
+    width: 100%;
+    /* INCREASED HEIGHT for mobile - allows scrolling when keyboard appears */
+    min-height: 150vh; /* 150% of viewport height gives plenty of scroll room */
+    padding: 2rem 1rem 4rem 1rem; /* Top: 2rem, Sides: 1rem, Bottom: 4rem (extra space) */
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem; /* 24px */
+    border-radius: 0.75rem; /* 12px */
+    width: 100%;
+    max-width: 18.75rem; /* 300px */
+    min-height: 31.25rem; /* 500px */
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--section-background-color__dark);
+    /* Remove fixed max-height to allow content to expand if needed */
+}
+
+.section-header {
+    margin-top: 0.9375rem; /* 15px */
+    margin-bottom: 0.9375rem; /* 15px */
+    font-size: 1.75rem; /* 28px */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.625rem; /* 10px */
+    margin: 0.3125rem 0; /* 5px */
+    width: 100%;
+}
+
+#username {
+    tab-index: 1;
+}
+
+#password {
+    tab-index: 2;
+}
+
+#submit-button {
+    tab-index: 3;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    box-shadow: none;
+    outline: none;
+    border-radius: 0.5rem; /* 8px */
+    font-size: 1rem;
+}
+
+.submit-button {
+    margin-top: 0.9375rem; /* 15px */
+    margin-bottom: 0.9375rem; /* 15px - extra margin for mobile */
+    border-radius: 0.5rem; /* 8px */
+    cursor: pointer;
+    padding: 0.625rem 3.125rem; /* 10px 50px */
+    box-shadow: none;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.error-message {
+    padding: 0.3125rem; /* 5px */
+    margin: 0.625rem; /* 10px */
+    font-size: 0.875rem; /* 14px */
+}
+
+.link {
+    margin-top: 0.9375rem; /* 15px */
+    margin-bottom: 1.5rem; /* Extra bottom margin for mobile scrolling */
+    color: var(--link-color__dark);
+    padding: 0.3125rem; /* 5px */
+    border-radius: 0.5rem; /* 8px */
+    text-decoration: none;
+    font-size: 0.875rem; /* 14px */
+}
+
+/* ------------------------------ Responsive Media Queries ------------------------------ */
+
+/* Small mobile devices - even more height */
+@media screen and (max-width: 374px) {
+    .wrapper {
+        min-height: 180vh; /* More room for smaller screens */
+        padding: 2rem 0.75rem 5rem 0.75rem; /* Extra bottom space only */
+    }
+
+    .section-container {
+        padding: 1rem;
+        max-width: 16.875rem; /* 270px */
+    }
+
+    .section-header {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile landscape and small tablets - still scrollable */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .wrapper {
+        min-height: 140vh; /* Still plenty of room */
+        padding: 2rem 1.5rem 4rem 1.5rem; /* Extra bottom space only */
+    }
+
+    .section-container {
+        max-width: 20rem; /* 320px */
+    }
+}
+
+/* Tablets and above: Fixed viewport, centered content, no extra height needed */
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh; /* Back to normal viewport height */
+        justify-content: center;
+        padding: 0; /* Remove extra padding */
+    }
+
+    .section-container {
+        max-width: 21.875rem; /* 350px */
+        padding: 2rem;
+    }
+
+    .section-header {
+        font-size: 2rem;
+    }
+
+    .input-field {
+        font-size: 1.0625rem; /* 17px */
+    }
+
+    .submit-button {
+        font-size: 1.0625rem;
+        padding: 0.75rem 3.5rem;
+        margin-bottom: 0.9375rem; /* Reset margin */
+    }
+
+    .link {
+        margin-bottom: 0.9375rem; /* Reset margin */
+    }
+}
+
+/* Larger tablets and small desktops */
+@media screen and (min-width: 992px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .section-container {
+        max-width: 23.125rem; /* 370px */
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1200px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .section-container {
+        max-width: 25rem; /* 400px */
+        padding: 2.5rem;
+    }
+}
+
+/* Large desktops */
+@media screen and (min-width: 1600px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .section-container {
+        max-width: 28.125rem; /* 450px */
+    }
+}
+
+/* ------------------------------ Themes ------------------------------ */
+
+/* ------------------------------ Dark ------------------------------ */
+
+.wrapper__dark {
+    background-color: var(--wrapper-background-color__dark);
+}
+
+.section-container__dark {
+    border: 1px solid var(--section-border-color__dark);
+}
+
+.section-header__dark {
+    color: var(--color__dark);
+}
+
+.input-field__dark {
+    background-color: var(--input-background-color__dark);
+    color: var(--input-color__dark);
+    border: 1px solid var(--input-border-color__dark);
+}
+
+.input-field__dark:hover, .input-field__dark:focus, .input-field__dark:autofill {
+    background-color: var(--input-focus-background-color__dark);
+    color: var(--input-focus-color__dark);
+    border: 1px solid var(--input-focus-border-color__dark);
+}
+
+.submit-button__dark {
+    background-color: var(--submit-button-background-color__dark);
+    color: var(--submit-button-color__dark);
+    border: 1px solid var(--submit-button-border-color__dark);
+}
+
+.submit-button__dark:hover, .submit-button__dark:focus {
+    background-color: var(--submit-button-focus-background-color__dark);
+    color: var(--submit-button-focus-color__dark);
+    border: 1px solid var(--submit-button-focus-border-color__dark);
+}
+
+.link__dark:hover {
+    color: var(--link-focus-color__dark);
+}
+
+/* ------------------------------ Light Theme (placeholder) ------------------------------ */
+
+/* Add light theme styles here when needed */

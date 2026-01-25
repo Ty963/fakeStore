@@ -7,6 +7,7 @@ Built with React, TypeScript, Bootstrap and Tailwind CSS.
 
 ## TODO
     To be found in the TODO file in the docs folder
+When the JWT is destructured it returns sub which is id, user which is username and iat which I'm not sure about, what needs to happen is the token needs to be saved to the local storage, when a refresh happens the checkauth needs to run and JWT needs to fetched from the localstorage, subsequently a checkauth function needs to happen which destructures a token and sends a backend request to retrieve user details.
 
 ### React:
 1. Implement user context

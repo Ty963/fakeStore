@@ -1,0 +1,393 @@
+/* ProfilePage.module.css */
+@import '/src/styles/variables.css';
+
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Profile Header */
+.profileHeader {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.headerInfo {
+    flex: 1;
+}
+
+.username {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.email {
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+/* Stats Grid */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+}
+
+.statIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Sections */
+.section {
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sectionHeader {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editButton {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+/* Info Grid */
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.infoLabel {
+    font-weight: bold;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.infoValue {
+    font-size: 1.1rem;
+}
+
+/* Action Buttons */
+.actionButtons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.actionButton,
+.logoutButton {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.actionButton:hover,
+.logoutButton:hover {
+    transform: translateY(-2px);
+}
+
+/* Debug Section */
+.debugSection {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+.debugSection summary {
+    cursor: pointer;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.debugContent {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-size: 0.75rem;
+}
+
+/* Loading */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-size: 1.2rem;
+}
+
+/* ========== DARK THEME ========== */
+
+.container__dark {
+    color: var(--color);
+}
+
+.profileHeader__dark {
+    background-color: var(--section-background-color);
+    border: 1px solid var(--section-border-color);
+}
+
+.profileHeader__dark .avatar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+.statCard__dark {
+    background-color: var(--section-background-color);
+    border: 1px solid var(--section-border-color);
+}
+
+.statCard__dark:hover {
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.section__dark {
+    background-color: var(--section-background-color);
+    border: 1px solid var(--section-border-color);
+}
+
+.editButton__dark {
+    background-color: transparent;
+    color: var(--color);
+    border-color: var(--border-primary);
+}
+
+.editButton__dark:hover {
+    background-color: var(--bg-hover);
+}
+
+.actionButton__dark {
+    background-color: var(--submit-button-background-color);
+    color: var(--submit-button-color);
+    border-color: var(--submit-button-border-color);
+}
+
+.actionButton__dark:hover {
+    background-color: var(--submit-button-focus-background-color);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+}
+
+.logoutButton__dark {
+    background-color: transparent;
+    color: #ff5555;
+    border-color: #ff5555;
+}
+
+.logoutButton__dark:hover {
+    background-color: rgba(255, 85, 85, 0.1);
+}
+
+.debugSection__dark {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-secondary);
+}
+
+.debugContent {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--color);
+}
+
+/* ========== GLASSMORPHIC THEME ========== */
+
+.container__glassmorphic {
+    color: #ffffff;
+}
+
+.container__glassmorphic .title {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+.profileHeader__glassmorphic {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.profileHeader__glassmorphic .avatar {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.profileHeader__glassmorphic .username {
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.statCard__glassmorphic {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.statCard__glassmorphic:hover {
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+
+.statCard__glassmorphic .statValue {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.section__glassmorphic {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.editButton__glassmorphic {
+    background: rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: #00ffff;
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+.editButton__glassmorphic:hover {
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.actionButton__glassmorphic {
+    background: rgba(255, 0, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    border-color: rgba(255, 0, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.actionButton__glassmorphic:hover {
+    background: rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+}
+
+.logoutButton__glassmorphic {
+    background: rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    color: #ff5555;
+    border-color: rgba(255, 85, 85, 0.6);
+}
+
+.logoutButton__glassmorphic:hover {
+    background: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 85, 85, 0.6);
+}
+
+.debugSection__glassmorphic {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.debugContent {
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .profileHeader {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .username {
+        font-size: 1.5rem;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .actionButtons {
+        grid-template-columns: 1fr;
+    }
+}

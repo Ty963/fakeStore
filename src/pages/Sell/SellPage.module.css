@@ -1,0 +1,352 @@
+/* SellPage.module.css */
+@import '/src/styles/variables.css';
+
+.container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.formContainer {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.input,
+.select,
+.textarea {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.hint {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.error {
+    color: #ff5555;
+    font-size: 0.85rem;
+}
+
+.successMessage {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.errorMessage {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.submitButton,
+.cancelButton {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.submitButton:hover:not(:disabled),
+.cancelButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.submitButton:disabled,
+.cancelButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Preview Section */
+.previewSection {
+    border-radius: 1rem;
+    padding: 2rem;
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+}
+
+.previewTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.previewSubtitle {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+}
+
+.previewCard {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.previewImage {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.previewInfo h4 {
+    margin-bottom: 0.5rem;
+}
+
+.previewCategory {
+    text-transform: capitalize;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.previewPrice {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* ========== DARK THEME ========== */
+
+.container__dark {
+    color: var(--color);
+}
+
+.formContainer__dark {
+    color: var(--color);
+}
+
+.input__dark,
+.select__dark,
+.textarea__dark {
+    background-color: var(--input-background-color);
+    color: var(--input-color);
+    border-color: var(--input-border-color);
+}
+
+.input__dark:focus,
+.select__dark:focus,
+.textarea__dark:focus {
+    background-color: var(--input-focus-background-color);
+    border-color: var(--input-focus-border-color);
+}
+
+.successMessage__dark {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+}
+
+.errorMessage__dark {
+    background-color: rgba(255, 85, 85, 0.1);
+    border: 1px solid rgba(255, 85, 85, 0.3);
+    color: #ff5555;
+}
+
+.submitButton__dark {
+    background-color: var(--submit-button-background-color);
+    color: var(--submit-button-color);
+    border-color: var(--submit-button-border-color);
+}
+
+.submitButton__dark:hover:not(:disabled) {
+    background-color: var(--submit-button-focus-background-color);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+}
+
+.cancelButton__dark {
+    background-color: transparent;
+    color: var(--color);
+    border-color: var(--border-primary);
+}
+
+.cancelButton__dark:hover:not(:disabled) {
+    background-color: var(--bg-hover);
+}
+
+.previewSection__dark {
+    background-color: var(--section-background-color);
+    border: 1px solid var(--section-border-color);
+}
+
+.previewCard__dark {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-primary);
+}
+
+/* ========== GLASSMORPHIC THEME ========== */
+
+.container__glassmorphic {
+    color: #ffffff;
+}
+
+.container__glassmorphic .title {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+.formContainer__glassmorphic {
+    color: #ffffff;
+}
+
+.input__glassmorphic,
+.select__glassmorphic,
+.textarea__glassmorphic {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+    border-color: rgba(0, 255, 255, 0.4);
+}
+
+.input__glassmorphic::placeholder,
+.textarea__glassmorphic::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input__glassmorphic:focus,
+.select__glassmorphic:focus,
+.textarea__glassmorphic:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.successMessage__glassmorphic {
+    background: rgba(0, 255, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 0, 0.6);
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+.errorMessage__glassmorphic {
+    background: rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 85, 85, 0.6);
+    color: #ff5555;
+    text-shadow: 0 0 10px rgba(255, 85, 85, 0.8);
+}
+
+.submitButton__glassmorphic {
+    background: rgba(255, 0, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    border-color: rgba(255, 0, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.submitButton__glassmorphic:hover:not(:disabled) {
+    background: rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+}
+
+.cancelButton__glassmorphic {
+    background: rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #00ffff;
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+.cancelButton__glassmorphic:hover:not(:disabled) {
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.previewSection__glassmorphic {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.previewCard__glassmorphic {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+.previewCard__glassmorphic .previewPrice {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .formContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .previewSection {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+    }
+}

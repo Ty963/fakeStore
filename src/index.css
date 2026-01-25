@@ -1,11 +1,20 @@
-@import "styles/variables.css";
+/* Import variables if you have src/styles/variables.css */
+/* Use absolute path from src: */
+@import '/src/styles/variables.css';
+
+/* OR if that doesn't work, use relative path: */
+/* @import './styles/variables.css'; */
+
+/* If you don't have variables.css yet, comment out the import above */
 
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
-    /* color: rgba(255, 255, 255, 0.87); */
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -20,23 +29,32 @@
 }
 
 *::selection {
-    background-color: var(--selection-background-color__dark);
-    color: var(--color__dark);
+    background-color: #3c3c3c;
+    color: #ffffff;
 }
 
-/* Mobile-first: scrollable body */
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+/* ✅ FIXED: Allow scrolling */
 body {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
     min-height: 100vh;
-    overflow-y: auto;
+    width: 100%;
     overflow-x: hidden;
-    justify-content: flex-start;
-    align-items: center;
+    overflow-y: auto; /* ← This allows scrolling! */
 }
 
-/* Root element */
+/* ✅ FIXED: Don't lock height */
 #root {
     width: 100%;
     min-height: 100vh;
@@ -49,16 +67,36 @@ h1 {
     line-height: 1.1;
 }
 
-/* For tablets and larger screens: fixed height, centered content */
-@media screen and (min-width: 768px) {
-    body {
-        justify-content: center;
-        height: 100vh;
-        min-height: 100vh;
-        overflow: hidden;
-    }
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
 
-    #root {
-        height: 100vh;
+button:hover {
+    border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
     }
 }

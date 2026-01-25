@@ -1,0 +1,129 @@
+/* HomePage.module.css */
+@import '/src/styles/variables.css';
+
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--color);
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.userWelcome {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    background-color: var(--section-background-color);
+    border: 1px solid var(--section-border-color);
+}
+
+/* Glassmorphic-specific effects */
+[data-theme='glassmorphic'] .userWelcome {
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.userWelcome h2 {
+    margin-bottom: 0.5rem;
+}
+
+.userWelcome p {
+    margin: 0.25rem 0;
+    opacity: 0.8;
+}
+
+.quickLinks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: var(--section-background-color);
+    border: 1px solid var(--section-border-color);
+}
+
+/* Glassmorphic-specific effects */
+[data-theme='glassmorphic'] .card {
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.cardButton {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    background-color: var(--submit-button-background-color);
+    color: var(--submit-button-color);
+    border: 1px solid var(--submit-button-border-color);
+}
+
+.cardButton:hover {
+    background-color: var(--submit-button-focus-background-color);
+    color: var(--submit-button-focus-color);
+    border-color: var(--submit-button-focus-border-color);
+}
+
+/* Glassmorphic-specific effects */
+[data-theme='glassmorphic'] .cardButton {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+[data-theme='glassmorphic'] .cardButton:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Remove unused theme-specific classes */
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .quickLinks {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
